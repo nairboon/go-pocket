@@ -158,9 +158,6 @@ func (c *Client) Retrieve(options *RetrieveOption) (*RetrieveResult, error) {
 
 	res := &RetrieveResult{}
 	err := PostJSON("/v3/get", data, res)
-	if err != nil {
-		return nil, err
-	}
 
-	return res, nil
+	return res, err
 }
